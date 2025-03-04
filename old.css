@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#background {
+    height: 40vw;
+    width: 28vw;
+    background-color: #4ba1e2;
+    background-image: linear-gradient(135deg, #4ba1e2 0%, #333cb5 100%);
+    border-radius: 1em;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    transition: height 400ms ease-in-out;
+}
+
+#foreground {
+    height: 30vw;
+    width: 40vw;
+    border-radius: 5em;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #6365b7 100%);
+    position: absolute;
+
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+
+}
+
+.f-animation {
+    animation: anima 400ms ease-in-out;
+}
+
+@keyframes anima {
+    50%{
+        transform: translate3d(50%,-50%,-60px);
+    }
+}
+
+#display {
+    width: 85%;
+    height: 30%;
+
+    margin: auto;
+    margin-top: 5%;
+    padding: 1vw;
+    font-size: 5vw;
+    text-align: center;
+    font-family: "Sigmar", sans-serif;
+    color: rgb(41, 41, 107);
+
+}
+
+.buttons {
+    position: absolute;
+   
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    width: 80%;
+    height: 30%;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
+
+.buttons div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    height: 50%;
+    width: 55%;
+    border-radius: 10px;
+
+    background-color:  #b9d0ed;
+    background-position: bottom;
+    border: none;
+
+    box-shadow: 0px 4px 0px #0072ff;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 0px #0072ff;
+  }
+
+button:active {
+    transform: translateY(0px);
+    box-shadow: none;
+  }
+
+#add {
+    background-image: url(assets/plus.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+#minus {
+    background-image: url(assets/minus.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+#reset {
+    background-image: url(assets/reset.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
